@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"09a20f8b15","applicationID":"16567502","transactionName":"JltZQ0tbVFoHFxlJCgpAWEQWVkpZFRZT","queueTime":3,"applicationTime":127,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link href="/assets/application-44b8ebd80b152d5b57d2f0166d5fafdea1a8eb36ec1b71596d00d01335496357.css" media="all" rel="stylesheet" />
+<!--[if lte IE 9]>
+<link href="/assets/application_split2-2460ed14f833525fe2daf8278643aedd9af241ddc65cda91644696268bc67edf.css" media="all" rel="stylesheet" />
+<![endif]-->
+<script data-turbolinks-track="true" src="/assets/application-bebad0e6904f7ca7e861f28bd17b4c0361ce4df6b09960271526c5c325b90ff8.js"></script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="/VAIPzK8A9lENpugU/d0xYA5eCSvlOfmJRhZFwen7cc=" name="csrf-token" />
+<title></title>
+<meta name="description"></meta>
+<script src="/assets/browse_search-a8e1007e6b1e23c5d0a8ec9b389e347eff353e4deb65599028814c4b9ad6b6d9.js"></script>
+
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52d8576749703f82"></script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '477833545686685',
+      xfbml      : true,
+      version    : 'v2.1'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<meta content='http://dailywildlifephoto.nathab.com/browse-photos' property='og:url'>
+<meta content='blog' property='og:type'>
+
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='/favicon.ico' rel='icon' type='image/ico'>
+<meta content='3725feda8185061751e90d8733f850c1' name='p:domain_verify'>
+<meta content='ptViPnbnXAfyMWPfBQrsvLEIatfXolRtI_b8-TgrAio' name='google-site-verification'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-56408331-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body class=''>
+
+<div id='header'>
+<div class='container'>
+<ul class='account-menu'>
+<li><a href="/sign-in">Sign In</a></li>
+</ul>
+<div class='logo'><a href="/">Wildlife Photo Of The Day</a></div>
+<div class='header-right'>
+<a class="powered_by" href="http://www.nathab.com/" target="_blank"></a>
+</div>
+</div>
+</div>
+<div id='menu-wrapper'>
+<div id='menu'>
+<div class='container'>
+<ul>
+<li><a href="/">Today&#39;s Photo</a></li>
+<li><a href="/browse-photos">Browse Photos</a></li>
+<li><a href="/submit-your-photo">Submit Your Photo</a></li>
+<li><a href="/photography-guide">Photography Tips</a></li>
+
+<li class='button'>
+<a class="btn-orange" href="/subscribe-today">Subscribe Today!
+<span class='mail-icon'></span>
+</a>
+</li>
+</ul>
+<div class='mobile'>
+<a class="btn-orange" href="/subscribe-today">Subscribe Today!
+<span class='mail-icon'></span>
+</a>
+<div class='menu'>
+<span class='closed glyphicon glyphicon-align-justify'></span>
+<span class='open glyphicon glyphicon-remove'></span>
+<span class='closed'>Menu</span>
+<span class='open'>Close</span>
+</div>
+<div class='mobile-drop-down account'>
+<div><a href="/sign-in">Sign In</a></div>
+</div>
+<ul class='mobile-drop-down'>
+<li><a href="/">Today&#39;s Photo</a></li>
+<li><a href="/browse-photos">Browse Photos</a></li>
+<li><a href="/submit-your-photo">Submit Your Photo</a></li>
+<li><a href="/photography-guide">Photography Tips</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='content'><div class='container'>
+
+
+<article><h1>Browse Photos</h1>
+<div class='search-box hidden-sm hidden-xs'>
+<form accept-charset="UTF-8" action="http://dailywildlifephoto.nathab.com/browse-photos" id="browse-search" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class='flexbox'>
+<div class='flexitem'>
+<input class="search" id="keyword" name="keyword" placeholder="Search by Keyword" type="text" />
+</div>
+<div class='flexitem'>
+<select class="chosen" data-placeholder="Search by Species" id="species" multiple="multiple" name="species[]"><option value="21">Bears</option>
+<option value="3">Birds</option>
+<option value="22">Cats</option>
+<option value="4">Insects & Invertebrates</option>
+<option value="1">Mammals</option>
+<option value="28">Marine Life</option>
+<option value="27">Primates</option>
+<option value="26">Reptiles & Amphibians</option>
+<option value="25">Whales & Dolphins</option></select>
+</div>
+<div class='flexitem'>
+<select class="chosen" data-placeholder="Search by Region" id="region" multiple="multiple" name="region[]"><option value="13">Africa</option>
+<option value="14">Antarctica</option>
+<option value="15">Asia & South Pacific</option>
+<option value="29">Canada</option>
+<option value="11">Europe</option>
+<option value="30">Galapagos Islands</option>
+<option value="24">Mexico & Central America</option>
+<option value="12">South America</option>
+<option value="23">The Arctic</option>
+<option value="9">USA</option></select>
+</div>
+<div class='flexitem'>
+<input class="daterangepicker search" id="date_range" name="date_range" placeholder="Seach by Date" type="text" />
+</div>
+<div class='flexitem'>
+<input class="btn-green" type="submit" value="Search" />
+</div>
+</div>
+</form>
+
+</div>
+<div class="pagination"><span class="previous_page disabled">&laquo; Previous</span> <em class="current">1</em> <a rel="next" href="/browse-photos?page=2">2</a> <a href="/browse-photos?page=3">3</a> <a href="/browse-photos?page=4">4</a> <a href="/browse-photos?page=5">5</a> <a href="/browse-photos?page=6">6</a> <a href="/browse-photos?page=7">7</a> <span class="gap">&hellip;</span> <a href="/browse-photos?page=72">72</a> <a class="next_page" rel="next" href="/browse-photos?page=2">Next &raquo;</a></div>
+<div class='grid'><div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/12038-flutterby-08-03-2018"><img alt="Gulf Fritillary Butterfly, Gulf Fritillary Butterfly photos, butterflies in Texas, butterflies in the US, Bob Jones Nature Center" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/12038/grid_Bob_Jones_Nature_Center-Gulf_Fritillary2-7-29-18-4015.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Flutterby</h3>
+<div class='popover-content'>
+<div class='date'>8/3/2018</div>
+<div class='teaser'>This photograph was taken at Bob Jones Nature Center in Southlake,...</div>
+<div class='link'><a href="/photos/12038-flutterby-08-03-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/12049-blue-butt-08-02-2018"><img alt="grizzly bear, brown bear, grizzly photos, brown bear photos, alaska wildlife, alaska bears, alaska wildlife photos, alaska bear photos, united states wildlife, united states wildlife photos, Denali National Park, Denali wildlife, bears in Denali" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/12049/grid_Imgp1025.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Blue Butt</h3>
+<div class='popover-content'>
+<div class='date'>8/2/2018</div>
+<div class='teaser'>Late summer/early fall in Denali National Park, watching this grizzly foraging...</div>
+<div class='link'><a href="/photos/12049-blue-butt-08-02-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/11846-early-morning-stretch-08-01-2018"><img alt="common loon, common loon photos, common look chick, common loon chick photos, cariboo region, british columbia wildlife, british columbia birds, ducks in british columbia, common loons in british columbia, ducks in Canada" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11846/grid_2B87DAF3-4F4A-4AE1-8074-ECE6D834A205.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Early Morning Stretch</h3>
+<div class='popover-content'>
+<div class='date'>8/1/2018</div>
+<div class='teaser'>I headed west from Ontario&nbsp;to photograph the birds in this area...</div>
+<div class='link'><a href="/photos/11846-early-morning-stretch-08-01-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 338px'><a href="/photos/11840-tule-elk-bull-in-the-morning-light-07-31-2018"><img alt="elk, bull elk, elk photos, bull elk photos, California wildlife, united states wildlife, tule elk, tule elk photos, tule elk in California" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11840/grid_TuleElk_byAttilaAdam.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Tule Elk Bull in the Morning Light</h3>
+<div class='popover-content'>
+<div class='date'>7/31/2018</div>
+<div class='teaser'>I was making breakfast at sunrise when I saw this tule...</div>
+<div class='link'><a href="/photos/11840-tule-elk-bull-in-the-morning-light-07-31-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/11975-going-for-a-swim-07-30-2018"><img alt="jaguar, jaguar photos, wild jaguars, pantanal wildlife, brazil wildlife, jaguars in the pantanal, jaguars in brazil, south american wildlife" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11975/grid_DSCF2571.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Going for a Swim</h3>
+<div class='popover-content'>
+<div class='date'>7/30/2018</div>
+<div class='teaser'>A jaguar swims through the river to get to the other...</div>
+<div class='link'><a href="/photos/11975-going-for-a-swim-07-30-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 159px'><a href="/photos/11984-great-grey-owl-thistles-07-29-2018"><img alt="great gray owl, great gray owl photos, birding in Canada, owls in Canada, wildlife in Canada, Canada wildlife, Canada birding, Canada owls, Kettle Valley wildlife, Kettle Valley birding, great grey owl, great grey owl photos" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11984/grid_DSC_5587.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Great Grey Owl and Thistles </h3>
+<div class='popover-content'>
+<div class='date'>7/29/2018</div>
+<div class='teaser'>Great grey owl perched on a fence post amongst some pink...</div>
+<div class='link'><a href="/photos/11984-great-grey-owl-thistles-07-29-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 201px'><a href="/photos/11974-galapagos-tortoise-07-28-2018"><img alt="giant tortoise, giant tortoise photos, galapagos tortoise, galapagos islands, galapagos wildlife" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11974/grid_galapagos_turtle.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Galapagos Tortoise</h3>
+<div class='popover-content'>
+<div class='date'>7/28/2018</div>
+<div class='teaser'>Close encounter with a Galapagos giant tortoise....</div>
+<div class='link'><a href="/photos/11974-galapagos-tortoise-07-28-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/11849-mountain-goat-portrait-07-27-2018"><img alt="mountain goat, Scotland wildlife, mountain goats in Scotland, Glencoe wildlife, Glencoe wildlife photos, Scotland wildlife photos" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11849/grid_07815607-AAB8-40A0-B588-A3C8FBF58CBE.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Mountain Goat Portrait </h3>
+<div class='popover-content'>
+<div class='date'>7/27/2018</div>
+<div class='teaser'>I was up at Glencoe, Scotland on a photography trip to...</div>
+<div class='link'><a href="/photos/11849-mountain-goat-portrait-07-27-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 205px'><a href="/photos/11976-mild-mighty-07-26-2018"><img alt="lion, lion photos, tanzania wildlife, tanzania wildlife photos, africa wildlife, africa wildlife photos, lions in tanzania, tanzania safari, tanzania safari photos, africa safari, africa safari photo, serengeti national park" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11976/grid_19072018-DSC08264__.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Mild &amp; Mighty</h3>
+<div class='popover-content'>
+<div class='date'>7/26/2018</div>
+<div class='teaser'>After getting some information by another guide, our safari guide found...</div>
+<div class='link'><a href="/photos/11976-mild-mighty-07-26-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 151px'><a href="/photos/11879-marine-iguana-07-25-2018"><img alt="iguana, marine iguana, iguana photos, marine iguana photos, galapagos islands wildlife, galapagos wildlife photos" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11879/grid_GALAPAGOS_iguana_2.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Marine Iguana </h3>
+<div class='popover-content'>
+<div class='date'>7/25/2018</div>
+<div class='teaser'>Marine iguanas sunning on the lava rock....</div>
+<div class='link'><a href="/photos/11879-marine-iguana-07-25-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 216px'><a href="/photos/11934-lilac-breasted-roller-07-24-2018"><img alt="lilac breasted roller, lilac breasted roller photos, lilac breasted roller images, South Africa wildlife, South Africa wildlife images, South Africa wildlife photos, africa wildlife, South Africa birds, africa birds, Sabi Sand, Kruger National Park" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11934/grid_lilac_rollerwp.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Lilac Breasted Roller</h3>
+<div class='popover-content'>
+<div class='date'>7/24/2018</div>
+<div class='teaser'>Lilac breasted roller coming in for a landing....</div>
+<div class='link'><a href="/photos/11934-lilac-breasted-roller-07-24-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/11946-where-the-buffalo-roam-07-23-2018"><img alt="buffalo, bison, buffalo photos, bison photos, yellowstone national park, yellowstone wildlife, yellowstone national park photos, yellowstone wildlife photos, american bison, american wildlife, american wildlife photos" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11946/grid_Where_the_Buffalo_Roam_Final.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Where the Buffalo Roam</h3>
+<div class='popover-content'>
+<div class='date'>7/23/2018</div>
+<div class='teaser'>We drove into one of the few state parks where there...</div>
+<div class='link'><a href="/photos/11946-where-the-buffalo-roam-07-23-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 181px'><a href="/photos/11838-family-affair-07-22-2018"><img alt="burrowing owl, burrowing owl photos, owl photos, California birds, California wildlife, birds in the US, wildlife in the US" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11838/grid_DSC_1714__2_.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Family Affair</h3>
+<div class='popover-content'>
+<div class='date'>7/22/2018</div>
+<div class='teaser'>A family of burrowing owls playing....</div>
+<div class='link'><a href="/photos/11838-family-affair-07-22-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/11869-monkey-talk-07-21-2018"><img alt="squirrel monkey, squirrel monkey, monkey photos, Manuel Antonio National Park, Costa Rica wildlife, Costa Rica monkeys" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11869/grid_Costa_Rica_294__1_of_1_.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Monkey Talk</h3>
+<div class='popover-content'>
+<div class='date'>7/21/2018</div>
+<div class='teaser'>This is a squirrel monkey taken just outside Manuel Antonio National...</div>
+<div class='link'><a href="/photos/11869-monkey-talk-07-21-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/11920-friend-or-foe-07-20-2018"><img alt="polar bear, polar bear in churchill, polar bear in canada, canada wildlife, canada polar bears, canada wildlife images, polar bear images, canada wildlife photos, polar bear photos, churchill wildlife, churchill wildlife photos" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11920/grid_79_b.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Friend or Foe?</h3>
+<div class='popover-content'>
+<div class='date'>7/20/2018</div>
+<div class='teaser'>We were in Churchill, Manitoba with Natural Habitat Adventures in November&nbsp;2017...</div>
+<div class='link'><a href="/photos/11920-friend-or-foe-07-20-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 151px'><a href="/photos/11083-march-of-the-cranes-07-19-2018"><img alt="sand hill crane, sand hill crane photos, cranes, crane photos, cranes in Canada, Canada wildlife, Canada birds, wildlife in Canada, birds in Canada, Alberta wildlife, Alberta birding" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11083/grid_March_of_the_Sandhill_Cranes.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>March of the Cranes</h3>
+<div class='popover-content'>
+<div class='date'>7/19/2018</div>
+<div class='teaser'>Sandhill cranes march across a field in rural Alberta as part...</div>
+<div class='link'><a href="/photos/11083-march-of-the-cranes-07-19-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 187px'><a href="/photos/3804-safety-in-numbers-07-18-2018"><img alt="buffalo, bison, buffalo photos, bison photos, grand teton national park, Grand Teton wildlife, Grand Teton national park photos, Grand Teton wildlife photos, american bison, american wildlife, american wildlife photos, red dog, baby bison" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/3804/grid_B01A3419.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Safety in Numbers</h3>
+<div class='popover-content'>
+<div class='date'>7/18/2018</div>
+<div class='teaser'>Protection to baby bison calf by older and more mature herd...</div>
+<div class='link'><a href="/photos/3804-safety-in-numbers-07-18-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/11641-whos-the-king-of-the-jungle-07-17-2018"><img alt="tiger photos, bengal tiger photos, tiger, bengal tiger, Bandavgarh National Park, Bandavgarh National Park wildlife, Bandavgarh National Park wildlife photos, india wildlife, india wildlife photos" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/11641/grid_Kankati_female_cub.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Who's the King of the Jungle?</h3>
+<div class='popover-content'>
+<div class='date'>7/17/2018</div>
+<div class='teaser'>Young tiger cub on the verge of marking out her own...</div>
+<div class='link'><a href="/photos/11641-whos-the-king-of-the-jungle-07-17-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/10666-catching-its-best-side-07-16-2018"><img alt="wood duck, wood duck photos, British Columbia ducks, British Columbia wildlife, birds in Canada, birding in Canada, birding in British Columbia, Kings Pond" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/10666/grid_IMG_2792_DxO.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>Catching its Best Side</h3>
+<div class='popover-content'>
+<div class='date'>7/16/2018</div>
+<div class='teaser'>Male wood duck at Kings Pond, Saanich, Vancouver Island, BC, Canada....</div>
+<div class='link'><a href="/photos/10666-catching-its-best-side-07-16-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+<div class='grid-item'>
+<div class='image' style='height: 180px'><a href="/photos/9253-the-bird-and-the-buffalo-07-15-2018"><img alt="cape buffalo, cape buffalo photos, Kenya wildlife, Kenya wildlife photos, cape buffalo in Kenya, Kenya safari, Africa safari, Maasai Mara, Maasai Mara wildlife, red-billed ox pecker, red-billed ox pecker photos" src="https://s3.amazonaws.com/Photo_of_the_Day/system/uploads/photo/image/9253/grid_IMG_7336.jpg" /></a></div>
+<div class='info'>
+<div class='arrow'></div>
+<h3 class='popover-title'>The Bird and the Buffalo</h3>
+<div class='popover-content'>
+<div class='date'>7/15/2018</div>
+<div class='teaser'>A buffalo with a bird at Maasai Mara National Reserve in...</div>
+<div class='link'><a href="/photos/9253-the-bird-and-the-buffalo-07-15-2018">View Photo &raquo;</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pagination"><span class="previous_page disabled">&laquo; Previous</span> <em class="current">1</em> <a rel="next" href="/browse-photos?page=2">2</a> <a href="/browse-photos?page=3">3</a> <a href="/browse-photos?page=4">4</a> <a href="/browse-photos?page=5">5</a> <a href="/browse-photos?page=6">6</a> <a href="/browse-photos?page=7">7</a> <span class="gap">&hellip;</span> <a href="/browse-photos?page=72">72</a> <a class="next_page" rel="next" href="/browse-photos?page=2">Next &raquo;</a></div>
+
+</article>
+</div>
+</div>
+<div id='wwf'>
+<div class='container'>
+<div class='crest'><a href="http://www.nathab.com/wwf" target="_blank"><img alt="Discovering our planet together db0459a1b64f7be53e5ccd9915d3b5e35c841503b07a64014b6693a852b4a10e" src="/assets/layouts/discovering_our_planet_together-db0459a1b64f7be53e5ccd9915d3b5e35c841503b07a64014b6693a852b4a10e.png" /></a></div>
+<div class='copy'><div class='title'>WWF &amp; Natural Habitat Adventures. Discovering Our Planet Together.</div>
+<p>
+Since 2003, Natural Habitat Adventures has partnered with World Wildlife
+Fund, the world’s leading environmental conservation organization, to offer
+conservation travel—sustainable travel that supports the protection of nature
+and wildlife. NHA has provided more than $2 million to WWF and will continue
+to give 1 percent of gross sales plus 100,000 annually through 2023 in
+support of WWF’s mission to conserve nature and reduce the most pressing
+threats to the diversity of life on Earth.
+</p>
+<p><a href="http://www.nathab.com/wwf" target="_blank">Learn more about the NHA/WWF partnership.</a></p>
+</div>
+</div>
+</div>
+<div id='footer'>
+<div class='container'>
+<div class='left'>
+<div class='clearfix'>
+<ul><li><a href="/">Today&#39;s Photo</a></li>
+<li><a href="/browse-photos">Browse Photos</a></li>
+<li><a href="/submit-your-photo">Submit Your Photo</a></li>
+<li><a href="/about-us">About Us</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+<li><a href="/contact-us">Contact Us</a></li>
+</ul>
+</div>
+<p>
+&copy; Natural Habitat Adventures. All Rights Reserved.
+</p>
+<p>
+&reg; WWF and World Wildlife Fund are WWF Registered Trademarks. &copy; 1986 Panda Symbol WWF
+</p>
+</div>
+<div class='right'>
+<p>PO Box 3065 - Boulder, CO, USA 80307</p>
+<p>(303) 449-3711 International - (800) 544-8917 U.S. &amp; Canada</p>
+</div>
+</div>
+</div>
+<div class='modal' id='share-by-email'>
+<div class='modal-dialog'>
+<form accept-charset="UTF-8" action="/share-by-email" class="new_share_by_email" data-remote="true" id="new_share_by_email" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div><input id="share_by_email_contest_id" name="share_by_email[contest_id]" type="hidden" />
+<input id="share_by_email_vote_id" name="share_by_email[vote_id]" type="hidden" />
+<input id="share_by_email_photo_id" name="share_by_email[photo_id]" type="hidden" />
+<input id="share_by_email_url" name="share_by_email[url]" type="hidden" value="http://dailywildlifephoto.nathab.com/browse-photos" />
+<div class='modal-content'>
+<div class='modal-header'>
+<button class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>&times;</span>
+<span class='sr-only'>Close</span>
+</button>
+<h4 class='modal-title'>
+Send to a friend
+</h4>
+</div>
+<div class='modal-body'>
+<div class='alert alert-success success-body start-hidden'></div>
+<div class='alert alert-danger error-body start-hidden'>
+<strong>Oh no! We couldn't send your message. Don't panic, just correct the following errors and try again.</strong>
+<ul></ul>
+</div>
+<div class='form-body'>
+<div class='form-group'>
+<label class="control-label" for="share_by_email_recipient_email">Recipient email(s)</label>
+<input class="form-control" id="share_by_email_recipient_email" name="share_by_email[recipient_email]" type="text" />
+<span class='help-block'>Enter multiple addresses by separating them with commas.</span>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<div class='form-group'>
+<label class="control-label" for="share_by_email_your_name">Your name</label>
+<input class="form-control" id="share_by_email_your_name" name="share_by_email[your_name]" type="text" />
+</div>
+</div>
+<div class='col-md-6'>
+<div class='form-group'>
+<label class="control-label" for="share_by_email_your_email">Your email</label>
+<input class="form-control" id="share_by_email_your_email" name="share_by_email[your_email]" type="text" />
+</div>
+</div>
+</div>
+<div class='form-group'>
+<label class="control-label" for="share_by_email_body">Message</label>
+<textarea class="form-control" id="share_by_email_body" name="share_by_email[body]" rows="6">
+Check out this amazing wildlife photo!</textarea>
+<span class='help-block'>
+The URL will automatically be included in the email.
+</span>
+</div>
+</div>
+</div>
+<div class='modal-footer'>
+<div class='form-body'>
+<input class="btn-blue" name="commit" type="submit" value="Send" />
+</div>
+<div class='success-body start-hidden'>
+<button class='btn-green' data-dismiss='modal' type='button'>Close</button>
+</div>
+</div>
+</div>
+</form>
+
+</div>
+</div>
+
+<div class='modal' id='after_subscription_modal'>
+<div class='modal-dialog'>
+<form accept-charset="UTF-8" action="" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="PUT" /><input name="authenticity_token" type="hidden" value="/VAIPzK8A9lENpugU/d0xYA5eCSvlOfmJRhZFwen7cc=" /></div>
+<div class='modal-content'>
+<div class='modal-header'>
+<button class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>&times;</span>
+<span class='sr-only'>Close</span>
+</button>
+<h3 class='modal-title'>
+Thank you for subscribing to the
+<br>
+Wildlife Photo of the Day weekly email!
+</h3>
+</div>
+<div class='modal-body'>
+<p>
+Wildlife Photo of the Day is sponsored by Natural Habitat
+Adventures and World Wildlife Fund. NHA is a leader in responsible
+adventure travel &amp; ecotourism, and WWF is the world's leading
+environmental conservation organization.
+</p>
+<p>
+Would you also like to receive eNewsletters from NHA and WWF,
+highlighting exclusive travel offers and conservation news about
+your favorite animals?
+</p>
+<div class='checkbox fine-print'>
+<label><input checked="checked" id="subscription_also_receive_nathab" name="subscription[also_receive_nathab]" type="checkbox" value="1" />
+I'd also like to receive Natural Habitat Adventures' weekly eNews,
+featuring exclusive travel offers, wildlife photography hints,
+wildlife webinars, travel ideas, and more.
+</label></div>
+<div class='checkbox fine-print'>
+<label><input checked="checked" id="subscription_also_receive_wwf" name="subscription[also_receive_wwf]" type="checkbox" value="1" />
+I'd also like to receive WWF's eNews, featuring conservation news,
+wildlife facts, victories from the field, and ways to engage with
+your favorite wildlife.
+</label></div>
+</div>
+<div class='modal-footer'>
+<input class="btn-blue" name="commit" type="submit" value="Sign me up!" />
+<a class="btn-green" href="/subscribe-today/thanks">No thanks.</a>
+</div>
+</div>
+</form>
+
+</div>
+</div>
+
+<div class='social-button-padding'></div>
+</body>
+</html>
+
