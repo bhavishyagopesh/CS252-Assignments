@@ -1,4 +1,4 @@
-# Run the server
+# Run the docker
 docker build -t server ./   
 docker run -it -p 5555:5555 -t server bash
 
