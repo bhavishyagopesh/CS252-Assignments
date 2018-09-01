@@ -1,0 +1,12 @@
+# Run the server
+docker build -t server ./   
+docker run -it -p 5555:5555 -t server bash
+
+# Run the server inside docker
+./ftpserver 5555 
+
+# Run the client
+# Instruction-> #cats cats #dogs dogs #cars cars #trucks trucks
+Eg: ./script.sh 4 cats 2 dogs 4 cars 4 trucks
+
+
