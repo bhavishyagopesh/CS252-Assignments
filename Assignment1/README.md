@@ -6,6 +6,7 @@
     $ ./ftpserver 5555 
 
 ## Step 3: Run the client
+    $ gcc -std=gnu99 -Wall ftpclient.c -o ftpclient
     $ ./script.sh 4 cats 2 dogs 4 cars 4 trucks
 
 
