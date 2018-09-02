@@ -33,13 +33,36 @@ done
 
 rm -f index.html
 
+cat >> ./index.html << HTML
+
+    <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
+<body>
+
+HTML
+
 for i in local/*.jpeg
 do 
 cat >> ./index.html << HTML
 
-    <img src="$i"/>
+    <img src="$i" style="width:50%;"/>
     <br>
 
+HTML
+
+cat >> ./index.html << HTML
+</body>
+</html>
 HTML
 done
 
