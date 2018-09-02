@@ -3,78 +3,17 @@
 /****************** SERVER CODE ****************/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
-#include <unistd.h>
-#include <errno.h>
 
 int welcomeSocket, newSocket;
 char buffer[1024];
 struct sockaddr_in serverAddr;
 struct sockaddr_storage serverStorage;
 socklen_t addr_size;
-
-void clearStr (char* str) {
-    for (int i = 0; str[i] != 0; i++) str[i] = 0;
-}
-
-void send_image(int socket, char file_name[]){
-
-  FILE *picture;
-  int size, read_size, stat, packet_index;
-  char send_buffer[10240], read_buffer[256];
-  packet_index = 1;
-
-  picture = fopen(file_name, "r");
-  printf("Getting Picture Size\n");
-
-  if(picture == NULL) {
-      printf("Error Opening Image File"); }
-
-  fseek(picture, 0, SEEK_END);
-  size = ftell(picture);
-  fseek(picture, 0, SEEK_SET);
-  printf("Total Picture size: %i\n",size);
-
-  //Send Picture Size
-  printf("Sending Picture Size\n");
-  write(socket, (void *)&size, sizeof(int));
-
-  //Send Picture as Byte Array
-  printf("Sending Picture as Byte Array\n");
-
-  do { //Read while we get errors that are due to signals.
-    stat=read(socket, &read_buffer , 255);
-    printf("Bytes read: %i\n",stat);
-  } while (stat < 0);
-
-  printf("Received data in socket\n");
-  printf("Socket data: %s\n", read_buffer);
-
-
-  while(!feof(picture)) {
-    //Read from the file into our send buffer
-    read_size = fread(send_buffer, 1, sizeof(send_buffer)-1, picture);
-
-    //Send data through our socket
-    do{
-      stat = write(socket, send_buffer, read_size);
-    }while (stat < 0);
-
-    printf("Packet Number: %i\n",packet_index);
-    printf("Packet Size Sent: %i\n",read_size);
-    printf(" \n");
-    printf(" \n");
-
-
-    packet_index++;
-
-    //Zero out our send buffer
-    clearStr(send_buffer);
-  }
-}
 
 void tostring(char str[], int num) {
     int i, rem, len = 0, n;
@@ -90,6 +29,10 @@ void tostring(char str[], int num) {
         str[len - (i + 1)] = rem + '0';
     }
     str[len] = '\0';
+}
+
+void clearStr (char* str) {
+    for (int i = 0; str[i] != 0; i++) str[i] = 0;
 }
 
 int is_num(char x) {
@@ -112,7 +55,22 @@ void sendstuff (int count, char* item) {
     for (int i = 1; i <= count ; i++) {
         file_name[3] = i + '0';
         printf("file_name to be opened: %s\n", file_name);
-        send_image(newSocket, file_name);
+        FILE* ptr = fopen(file_name,"r");
+        fseek(ptr, 0L, SEEK_END);
+        int num_chars = ftell(ptr);
+        char contents[num_chars];
+        clearStr(contents);
+        fseek(ptr, 0L, SEEK_SET);
+        fread(contents, sizeof(char), num_chars, ptr);
+        fclose(ptr);
+        int s = printf("%d\n", num_chars+1);
+        char size[s]; tostring(size,num_chars+1);
+        send(newSocket, size, s, 0);
+        recv(newSocket, size, s, 0);
+        send(newSocket, contents, num_chars + 1, 0);
+        clearStr(size);
+        recv(newSocket, size, s, 0);
+        printf("\n");
     }
     //in the end
     clearStr(item);
@@ -140,7 +98,7 @@ void letscallafunction (char* request) {
 }
 
 
-int main(){
+int main(int argc, char** argv){
     /*---- Create the socket. The three arguments are: ----*/
     /* 1) Internet domain 2) Stream socket 3) Default protocol (TCP in this case) */
     welcomeSocket = socket(PF_INET, SOCK_STREAM, 0);
@@ -149,7 +107,7 @@ int main(){
     /* Address family = Internet */
     serverAddr.sin_family = AF_INET;
     /* Set port number, using htons function to use proper byte order */
-    serverAddr.sin_port = htons(5432);
+    serverAddr.sin_port = htons(atoi(argv[1]));
     /* Set IP address to localhost */
     serverAddr.sin_addr.s_addr = inet_addr("0.0.0.0");
     /* Set all bits of the padding field to 0 */
@@ -167,6 +125,7 @@ int main(){
         addr_size = sizeof serverStorage;
         newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
 
+        printf("Waiting for request....\n");
         /*---- Receive Request ----*/
         recv(newSocket, buffer, 1024, 0);
         printf("The request received is: %s\n", buffer);
