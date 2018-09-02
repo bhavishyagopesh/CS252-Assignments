@@ -1,6 +1,6 @@
 #!/bin/bash
 rm new*
-./CL "$1" 5432
+./C "$1" 5432
 
 rm -f index.html
 
@@ -34,3 +34,4 @@ HTML
 done
 
 open index.html
+firefox index.html
