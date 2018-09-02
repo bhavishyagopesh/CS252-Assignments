@@ -31,13 +31,14 @@ do
     echo $query | ./ftpclient localhost 5555
 done
 
-rm index.html
+rm -f index.html
 
 for i in local/*.jpeg
 do 
 cat >> ./index.html << HTML
 
     <img src="$i"/>
+    <br>
 
 HTML
 done
