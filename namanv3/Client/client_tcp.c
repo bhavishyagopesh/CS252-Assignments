@@ -61,10 +61,10 @@ int main(int argc, char** argv){
     //recv(clientSocket, buffer, 1024000, 0);
     int no_of_images = letscallafunction (argv[1]);
     printf("Going to receive %d images\n", no_of_images);
-    char file_name[] = "new1.jpeg";
+    char file_name[] = "newa.jpeg";
     for (int i = 0; i < no_of_images; i++) {
         //recvfrom(clientSocket, buffer, 1024, 0, (struct sockaddr *) &serverAddr, &addr_size);
-        file_name[3] = '1' + i;
+        file_name[3] = 'a' + i;
         printf("%s\n", file_name);
         recv(clientSocket, buffer, 10240, 0);
         int size = atoi(buffer);
