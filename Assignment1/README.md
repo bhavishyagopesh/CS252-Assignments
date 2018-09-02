@@ -9,5 +9,11 @@
     $ gcc -std=gnu99 -Wall ftpclient.c -o ftpclient
     $ ./script.sh 4 cats 2 dogs 4 cars 4 trucks
 
+## Step 4: Run `gen_html.sh`
+Once all images are present on client pc, run
+    
+    $ ./gen_html.sh
+    $ google-chrome index.html
 
-
+you may need to give execute premissions to `gen_html.sh`
+    $ chmod +x gen_html.sh

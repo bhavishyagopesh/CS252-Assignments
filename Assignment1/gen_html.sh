@@ -1,5 +1,5 @@
 #!/bin/bash
-folder=remote
+folder=local
 header="null"
 out_file="index.html"
 
