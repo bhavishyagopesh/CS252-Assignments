@@ -322,7 +322,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<td>" . $gender_count_ratio[$title]["F"] . "</td>";
                 echo "<td>" . $gender_pay_ratio[$title]["M"] / $gender_count_ratio[$title]["M"] . "</td>";
                 echo "<td>" . $gender_pay_ratio[$title]["F"] / $gender_count_ratio[$title]["F"] . "</td>";
-                echo "<td>" . $gender_pay_ratio[$title]["F"] / $gender_pay_ratio[$title]["M"] . "</td>";
+                echo "<td>" . (($gender_pay_ratio[$title]["F"] * $gender_count_ratio[$title]["M"])/ ($gender_pay_ratio[$title]["M"] * $gender_count_ratio[$title]["F"])) . "</td>";
                 echo "</tr>";
             }
             echo "</table>";
