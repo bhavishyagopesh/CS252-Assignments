@@ -1,5 +1,5 @@
 #!/bin/zsh 
-
+rm -f local/*
 ## Enter the command
 echo 'Instruction-> #cats cats #dogs dogs #cars cars #trucks trucks'
 
@@ -66,4 +66,3 @@ cat >> ./index.html << HTML
 HTML
 done
 
-chromium index.html

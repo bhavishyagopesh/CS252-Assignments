@@ -27,3 +27,4 @@ for file_name in $( ls $folder ); do
 done
 
 echo `cat "footer"` >> $out_file
+chromium index.html
