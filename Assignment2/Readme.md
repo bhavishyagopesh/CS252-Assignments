@@ -2,7 +2,19 @@
 
 ## PHP_MYSQL 
 
+# Pull code from github and Change directory to Assignment2
 
+```
+docker pull bhavishya/mysql
+cd PHP_MYSQL
+docker run -it -p 8080:80 -v  bhavishya/mysql  bash
+
+#inside container 
+service mysql start
+service apache2 start
+
+# Go to localhost:8080 to see the running website
+```
 
 
 ## PHP_MONGODB
