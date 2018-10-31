@@ -1,7 +1,5 @@
 <?php
-
-/* 
- * Copyright (C) 2013 peter
+/*copyright (C) 2013 peter
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +41,42 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     // This should should be adequate as nobody gains any advantage from
     // breaking these rules.
     //
+        
+    $prep_stmt = "SELECT id FROM members WHERE username = ? LIMIT 1";
+    $stmt = $mysqli->prepare($prep_stmt);
     
+    if ($stmt) {
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $stmt->store_result();
+        
+        if ($stmt->num_rows == 1) {
+            // A user with this email address already exists
+            $error_msg .= '<p class="error">A user with this username already exists.</p>';
+            
+            for($temp = 1;$temp< 1000000;$temp++){
+                $t = (string)$temp;
+                $uname = $username.$t;
+                
+                $stmt->bind_param('s', $uname);
+                $stmt->execute();
+                $stmt->store_result();
+                
+                if ($stmt->num_rows != 1) 
+                {
+
+                    $error_msg .= '<p class="error">Suggested username is '.$uname.'</p>';
+                    break;
+                }
+            }
+            // exit();
+        }
+    } else {
+        $error_msg .= '<p class="error">Database error</p>';
+    }
+
+
+
     $prep_stmt = "SELECT id FROM members WHERE email = ? LIMIT 1";
     $stmt = $mysqli->prepare($prep_stmt);
     
