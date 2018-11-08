@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2013 peredur.net
+ *m Copyright (C) 2013 peredur.net
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,13 +58,23 @@ include_once 'includes/functions.php';
             Confirm password: <input type="password" 
                                      name="confirmpwd" 
                                      id="confirmpwd" /><br>
+	   
+		Security Question: <select name="question" id="question">
+  			<option value="1">Name of Best friend</option>
+  			<option value="2">Pet Name</option>
+			<option value="3">School Name</option>
+			<option value="4">First crush</option>
+		</select>
+ 		</br> 
+		Ans: <input type="text" name = "ans1" id ="ans1" /><br> 
             <input type="button" 
                    value="Register" 
                    onclick="return regformhash(this.form,
                                    this.form.username,
                                    this.form.email,
                                    this.form.password,
-                                   this.form.confirmpwd);" /> 
+                                   this.form.confirmpwd,
+				   this.form.ans1);" /> 
         </form>
         <p>Return to the <a href="index.php">login page</a>.</p>
     </body>
