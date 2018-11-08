@@ -33,7 +33,7 @@ if (isset($_POST['username'])) {
             // get variables from result.
             $stmt->bind_result($user_id, $username, $db_password, $salt, $question, $ans1);
             $stmt->fetch();
-            $mp = array("fraud","Name of Best friend", "Pet Name", "School Name", "First Crush");
+            $mp = array("","Name of Best friend", "Pet Name", "School Name", "First Crush");
             echo "<h1> Reset Password</h1>
                 <b>Question: </b>
             ";

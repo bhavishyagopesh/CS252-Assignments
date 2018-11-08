@@ -106,12 +106,12 @@ function regformhash(form, uid, email, password, conf,ans) {
         return false;
     }
 	
-	for (var i = 0;i< commonPasswords.length; i++)
+	for (var i = 0;i < commonPasswords.length; i++)
 	{
 		if(commonPasswords[i] == "password")
 		console.log(levenshteinDistance(commonPasswords[i] ,password.value));
     if(levenshteinDistance(commonPasswords[i] ,password.value) < 0.5){
-        alert('Your password is too weak, distance failed. Please try again');
+        alert('Your password is too common. Please try again');
         form.password.focus();
         return false;
  
