@@ -19,7 +19,6 @@ include_once 'db_connect.php';
 include_once 'psl-config.php';
 
 $error_msg = "";
-
 if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     // Sanitize and validate the data passed in
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -28,7 +27,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
 
     $question = filter_input(INPUT_POST, 'question', FILTER_SANITIZE_STRING);
     $ans1 = filter_input(INPUT_POST, 'ans1', FILTER_SANITIZE_STRING);
-	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         // Not a valid email
         $error_msg .= '<p class="error">The email address you entered is not valid</p>';
     }
@@ -117,7 +116,11 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
                 exit();
             }
         }
-        header('Location: ./register_success.php');
+        if(isset($_POST['change_pw']))
+            header('Location: ../register_success.php');
+        else
+            header('Location: ./register_success.php');
+
         exit();
     }
 }

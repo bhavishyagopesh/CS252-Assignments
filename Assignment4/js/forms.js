@@ -70,7 +70,12 @@ function formhash(form, password) {
     form.submit();
 }
 
+function func() {
+  alert("hello");
+}
+
 function regformhash(form, uid, email, password, conf,ans) {
+   
     // Check each field has a value
     if (uid.value == '' || email.value == '' || password.value == '' || conf.value == ''|| ans.value=='') {
         alert('You must provide all the requested details. Please try again');
